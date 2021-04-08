@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\TestController;
+use App\Http\Resources\RowsCollection;
+use App\Models\Row;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/rows', function () {
+    return new RowsCollection(Row::all());
+});
+Route::post('/upload', [TestController::class,'upload']);

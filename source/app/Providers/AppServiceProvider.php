@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Row;
+use App\Observers\RowObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Row::observe(RowObserver::class);
     }
 }
