@@ -1,4 +1,4 @@
-Запустить
+Запустить внутри папки laradock
 1. docker-compose up -d
 2. Запустить тест docker-compose exec workspace php artisan test
 
